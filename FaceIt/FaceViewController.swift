@@ -37,13 +37,13 @@ class FaceViewController: VCLLoggingViewController {
     
     func toggleEyes(byReactingTo tapRecognizer: UITapGestureRecognizer) {
         if tapRecognizer.state == .ended {
-            let eyes: FacialExpression.Eyes = (expression.eyes == .Closed) ? .Open : .Closed
+            let eyes: FacialExpression.Eyes = (expression.eyes == .closed) ? .open : .closed
             expression = FacialExpression(eyes: eyes, mouth: expression.mouth)
             
         }
     }
     
-    var expression = FacialExpression(eyes: .Closed, mouth: .Frown) {
+    var expression = FacialExpression(eyes: .closed, mouth: .Frown) {
         didSet {
             updateUI()
         }
@@ -51,11 +51,11 @@ class FaceViewController: VCLLoggingViewController {
     
     private func updateUI() {
         switch expression.eyes {
-        case .Open:
+        case .open:
             faceView?.eyesOpen = true
-        case .Closed:
+        case .closed:
             faceView?.eyesOpen = false
-        case .Squinting:
+        case .squinting:
             faceView?.eyesOpen = false
         }
         faceView?.mouthCurvature = mouthCurvatures[expression.mouth] ?? 0.0

@@ -26,9 +26,9 @@ class EmotionsViewController: VCLLoggingViewController {
     }
     
     private let emotionalFaces: Dictionary<String, FacialExpression> = [
-        "sad" : FacialExpression(eyes: .Closed, mouth: .Frown),
-        "happy" : FacialExpression(eyes: .Open, mouth: .Smile),
-        "worried" : FacialExpression(eyes: .Open, mouth: .Smirk),
+        "sad" : FacialExpression(eyes: .closed, mouth: .Frown),
+        "happy" : FacialExpression(eyes: .open, mouth: .Smile),
+        "worried" : FacialExpression(eyes: .open, mouth: .Smirk),
     ]
  
 }
